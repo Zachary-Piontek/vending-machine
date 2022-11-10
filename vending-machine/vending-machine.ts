@@ -1,7 +1,5 @@
-// Implement your vending machine here!
+/** Implement your vending machine here! */ 
 import process from 'node:process'
-
-// console.log(process.argv)
 
 let arg = null
 let cost = null
@@ -20,7 +18,7 @@ while((arg = process.argv.shift()) != null) {
 console.error('--item-cost', cost)
 console.error('--payment', payment)
 
-// Narrow cost to a number.
+/** Narrow cost to a number. */ 
 if(cost == null) {
   console.error('--item-cost is required but not provided. Exiting.')
   process.exit(1)
@@ -31,7 +29,7 @@ if(payment == null) {
 }
 
 const getChange = function(payment: number, cost: number) {
-    // calculate change
+    /** calculate change */ 
     let change = (payment - cost);
     console.log(`Your total change from vending machine is ${change} cents.
                 🟥🟥🟥🟥
@@ -39,7 +37,7 @@ const getChange = function(payment: number, cost: number) {
                 🟥🧃🍭💳
                 🟥⬛⬛🟥
                 🟥⬜⬜🟥 `);
-    // run through change amount and return correct change amount in currency
+    /** run through change amount and return correct change amount in currency */ 
     if (change > 24) {
         console.log(`Your change total change includes
         ${Math.floor(change/25)} quarters`);
@@ -59,5 +57,8 @@ const getChange = function(payment: number, cost: number) {
     }
     }
 
-// call function with params
+/** 
+call function with params
+*/
+
 getChange(payment, cost);
